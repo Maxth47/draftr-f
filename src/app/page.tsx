@@ -153,8 +153,10 @@ export default function Home() {
               </div>
               <div className={styles.availableOn}>
                 Available on Windows &amp; Mac
-                <span className={styles.platformIcons}>
+                <span className={styles.platformBtn}>
                   <Image src="/images/icon-2.svg" alt="Windows" width={20} height={20} />
+                </span>
+                <span className={styles.platformBtn}>
                   <Image src="/images/icon-3.svg" alt="Mac" width={20} height={20} />
                 </span>
               </div>
@@ -172,38 +174,51 @@ export default function Home() {
                 <div className={styles.integrationsIconsRow}>
                   {integrationIcons.slice(0, 5).map((icon, i) => (
                     <div key={i} className={styles.integrationIcon}>
-                      <Image src={icon.src} alt={icon.alt} width={48} height={48} />
+                      <Image src={icon.src} alt={icon.alt} width={64} height={64} />
                     </div>
                   ))}
                 </div>
                 <div className={styles.integrationsIconsRow}>
                   {integrationIcons.slice(5).map((icon, i) => (
                     <div key={i} className={styles.integrationIcon}>
-                      <Image src={icon.src} alt={icon.alt} width={48} height={48} />
+                      <Image src={icon.src} alt={icon.alt} width={64} height={64} />
                     </div>
                   ))}
                 </div>
                 <div className={styles.treeLines}>
-                  <Image src="/images/element-image-3.svg" alt="" width={400} height={200} />
+                  <svg viewBox="0 0 540 200" width="540" height="200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Left outer curve */}
+                    <path d="M1 0c0 150 250 75 250 200" stroke="rgba(82, 53, 239, 0.2)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
+                    {/* Left mid curve */}
+                    <path d="M250 200c0-125-150-50-150-200" stroke="rgba(82, 53, 239, 0.2)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
+                    {/* Left inner curve */}
+                    <path d="M250 200c0-125-50-50-50-200" stroke="rgba(82, 53, 239, 0.2)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
+                    {/* Right inner curve */}
+                    <path d="M250 200c0-125 50-50 50-200" stroke="rgba(82, 53, 239, 0.2)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
+                    {/* Right mid curve */}
+                    <path d="M250 200c0-125 150-50 150-200" stroke="rgba(82, 53, 239, 0.2)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
+                    {/* Right outer curve */}
+                    <path d="M250 200c0-125 250-50 250-200" stroke="rgba(82, 53, 239, 0.2)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
+                  </svg>
                 </div>
                 <div className={styles.treeCenterIcon}>
-                  <Image src="/images/logo.svg" alt="Draftr" width={32} height={38} />
+                  <Image src="/images/logo.svg" alt="Draftr" width={50} height={58} />
                 </div>
               </div>
             </div>
             <div className={styles.integrationsRight}>
-              <div>
+              <div className={styles.integrationsSectionTitle}>
                 <h2 className="h2">One platform, unlimited integrations</h2>
+                <Link href="/power-ups" className={styles.pricingBtnDark} style={{ alignSelf: 'flex-start', margin: 0 }}>
+                  View all integrations
+                </Link>
               </div>
-              <Link href="/power-ups" className={styles.pricingBtnDark} style={{ alignSelf: 'flex-start' }}>
-                View all integrations
-              </Link>
               <div className={styles.ceoQuoteWrap}>
                 <blockquote className={styles.ceoQuote}>
                   &ldquo;Our platform empowers teams to collaborate, innovate, and bring ideas to life—seamlessly and effortlessly.&rdquo;
                 </blockquote>
                 <div className={styles.ceoInfo}>
-                  <Image src="/images/sofia-delgado.jpg" alt="Daniel Vaughn" width={40} height={40} className={styles.ceoAvatar} />
+                  <Image src="/images/sofia-delgado.jpg" alt="Daniel Vaughn" width={35} height={35} className={styles.ceoAvatar} />
                   <span>Daniel Vaughn, Founder &amp; CEO</span>
                 </div>
               </div>
@@ -215,48 +230,60 @@ export default function Home() {
       {/* DARK FEATURES SECTION */}
       <section className={styles.darkFeaturesWrap}>
         <div className={styles.darkFeatures}>
-          <h2 className="h2 text-center" style={{ color: 'var(--white)' }}>
-            Power up your workflow with<br />next-gen features
-          </h2>
+          <div className={`${styles.darkFeaturesSectionTitle} text-center`}>
+            <h2 className="h2" style={{ color: 'var(--white)' }}>
+              Power up your workflow with<br />next-gen features
+            </h2>
+          </div>
 
           <div className={styles.darkCardsGrid}>
             <div className={styles.darkCard}>
               <div className={styles.darkCardImage}>
                 <Image src="/images/cloud-image.svg" alt="Cloud accessibility" width={400} height={240} />
               </div>
-              <h3 className="h3" style={{ color: 'var(--white)' }}>Cloud-based accessibility</h3>
-              <p className="body-md" style={{ color: 'var(--light-grey)' }}>Access your projects anytime, anywhere—no downloads or installations needed.</p>
+              <div className={styles.darkCardContent}>
+                <h3 className="h3" style={{ color: 'var(--white)' }}>Cloud-based accessibility</h3>
+                <p className="body-md">Access your projects anytime, anywhere—no downloads or installations needed.</p>
+              </div>
             </div>
             <div className={styles.darkCard}>
               <div className={styles.darkCardImage}>
                 <Image src="/images/security-image.svg" alt="Security" width={400} height={240} />
               </div>
-              <h3 className="h3" style={{ color: 'var(--white)' }}>Fast &amp; secure performance</h3>
-              <p className="body-md" style={{ color: 'var(--light-grey)' }}>Experience lightning-fast speed with enterprise-level security and version control.</p>
+              <div className={styles.darkCardContent}>
+                <h3 className="h3" style={{ color: 'var(--white)' }}>Fast &amp; secure performance</h3>
+                <p className="body-md">Experience lightning-fast speed with enterprise-level security and version control.</p>
+              </div>
             </div>
           </div>
 
           <div className={styles.darkFeaturesRow}>
             <div className={styles.darkFeatureItem}>
               <div className={styles.darkFeatureIcon}>
-                <Image src="/images/icon-4.svg" alt="" width={40} height={40} />
+                <Image src="/images/icon-4.svg" alt="" width={22} height={22} />
               </div>
-              <h3 className="h3" style={{ color: 'var(--white)' }}>Effortless design experience</h3>
-              <p className="body-md" style={{ color: 'var(--light-grey)' }}>Intuitive interface and smart tools to speed up your creative process.</p>
+              <div>
+                <h3 className="h3" style={{ color: 'var(--white)' }}>Effortless design experience</h3>
+                <p className="body-md">Intuitive interface and smart tools to speed up your creative process.</p>
+              </div>
             </div>
             <div className={styles.darkFeatureItem}>
               <div className={styles.darkFeatureIcon}>
-                <Image src="/images/icon-5.svg" alt="" width={40} height={40} />
+                <Image src="/images/icon-5.svg" alt="" width={22} height={22} />
               </div>
-              <h3 className="h3" style={{ color: 'var(--white)' }}>Hassle-free prototyping</h3>
-              <p className="body-md" style={{ color: 'var(--light-grey)' }}>Transform static designs into interactive prototypes in just a few clicks.</p>
+              <div>
+                <h3 className="h3" style={{ color: 'var(--white)' }}>Hassle-free prototyping</h3>
+                <p className="body-md">Transform static designs into interactive prototypes in just a few clicks.</p>
+              </div>
             </div>
             <div className={styles.darkFeatureItem}>
               <div className={styles.darkFeatureIcon}>
-                <Image src="/images/icon-6.svg" alt="" width={40} height={40} />
+                <Image src="/images/icon-6.svg" alt="" width={22} height={22} />
               </div>
-              <h3 className="h3" style={{ color: 'var(--white)' }}>One-click export &amp; handoff</h3>
-              <p className="body-md" style={{ color: 'var(--light-grey)' }}>Generate code, export assets, and collaborate with developers effortlessly.</p>
+              <div>
+                <h3 className="h3" style={{ color: 'var(--white)' }}>One-click export &amp; handoff</h3>
+                <p className="body-md">Generate code, export assets, and collaborate with developers effortlessly.</p>
+              </div>
             </div>
           </div>
         </div>

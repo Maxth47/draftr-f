@@ -1,0 +1,99 @@
+.footer {
+  background: var(--white);
+  padding: 60px 0 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--black);
+  text-decoration: none;
+  margin-bottom: 32px;
+}
+
+.followLabel {
+  font-size: 14px;
+  color: var(--mid-grey);
+  margin-bottom: 16px;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socials a {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.socials a:hover {
+  opacity: 1;
+}
+
+.heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--black);
+}
+
+.linksCol ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linksCol a {
+  color: var(--mid-grey);
+  font-size: 15px;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.linksCol a:hover {
+  color: var(--black);
+}
+
+.newBadge {
+  background: var(--purple);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  text-align: center;
+  color: var(--mid-grey);
+  font-size: 13px;
+}
+
+.bottom strong {
+  color: var(--black);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

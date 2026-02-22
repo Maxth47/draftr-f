@@ -1,0 +1,95 @@
+.about {
+  overflow-x: hidden;
+}
+
+.hero {
+  padding: 100px 0 0;
+  text-align: center;
+}
+
+.teamHeroImage {
+  margin-top: 60px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.imagePlaceholder {
+  aspect-ratio: 16 / 9;
+  background: var(--white);
+  border-radius: var(--radius-card-lg) var(--radius-card-lg) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--light-grey);
+  box-shadow: 0 -20px 40px rgba(0,0,0,0.05);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.principlesList {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.principlesList li strong {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.teamMember {
+  text-align: center;
+}
+
+.memberPhoto {
+  aspect-ratio: 1;
+  background: var(--white);
+  border-radius: var(--radius-card);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.memberName {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.memberRole {
+  font-size: 14px;
+  color: var(--purple);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 0 0;
+  }
+}

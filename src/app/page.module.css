@@ -535,16 +535,77 @@
   border-radius: 25px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 40px;
   min-height: 324px;
+  overflow: hidden;
 }
 
 .darkCardImage img {
-  width: auto;
   max-width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+/* Card 1 - Cloud composition */
+.cardComposition {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardBgMap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+}
+
+.cardCloudIcon {
+  width: 164px;
+  height: 164px;
+  position: relative;
+  z-index: 1;
+}
+
+.cardCursorLeft {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 110px;
+  height: auto;
+  z-index: 2;
+}
+
+.cardCursorRight {
+  position: absolute;
+  bottom: 20px;
+  right: 60px;
+  width: 110px;
+  height: auto;
+  z-index: 2;
+}
+
+/* Card 2 - Security composition */
+.cardLightning {
+  width: 90px;
+  height: 150px;
+}
+
+.cardArrows {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.cardShield {
+  width: 140px;
+  height: 150px;
 }
 
 .darkCardContent {

@@ -33,7 +33,7 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--black);
-  background: var(--light-bg);
+  background: rgb(255, 255, 255);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -80,11 +80,11 @@ button {
 
 /* ===== TYPOGRAPHY ===== */
 .h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(42px, 5.5vw, 72px);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  font-family: 'Inter', sans-serif;
+  font-size: 90px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -3.6px;
   color: var(--black);
 }
 
@@ -196,7 +196,7 @@ button {
 
 /* ===== GRADIENT BG ===== */
 .bg-lavender {
-  background: linear-gradient(160deg, #ede9ff 0%, #ddd6fe 20%, #d0c9fc 40%, #e0e8ff 70%, #eef1ff 100%);
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(135, 113, 255, 0.3) 24%, rgba(135, 113, 255, 0.3) 79%, rgb(255, 255, 255) 100%);
 }
 
 .bg-dark {
@@ -211,11 +211,6 @@ button {
   margin: 0;
 }
 
-/* ===== MARQUEE ===== */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {

@@ -1,11 +1,9 @@
 .header {
+  width: 100%;
+  background-color: rgb(240, 242, 246);
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .nav {
@@ -16,48 +14,60 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  border-radius: 10px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--black);
-  letter-spacing: -0.02em;
-  text-decoration: none;
+/* Logo */
+.logoWrap {
   flex-shrink: 0;
 }
 
-.logoDot {
-  color: var(--purple);
+.logo {
+  display: block;
+  width: 117px;
+  height: 40px;
+  position: relative;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Nav Center */
+.navCenter {
+  display: flex;
+  align-items: center;
 }
 
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 4px;
-  list-style: none;
-  margin: 0;
+  gap: 0;
+}
+
+.navLinkWrap {
   padding: 0;
 }
 
 .navLink {
+  display: block;
   padding: 8px 14px;
-  border-radius: 8px;
   font-size: 15px;
   font-weight: 500;
   color: var(--mid-grey);
   text-decoration: none;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease;
+  font-family: var(--font-body);
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
 .navLink:hover {
   color: var(--black);
-  background: rgba(0, 0, 0, 0.05);
 }
 
 .navLink.active {
@@ -65,16 +75,48 @@
   font-weight: 600;
 }
 
-.loginBtn {
+/* Login Button */
+.buttonWrap {
   flex-shrink: 0;
 }
 
+.loginBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgb(16, 16, 17) 0%, rgb(43, 43, 44) 100%);
+  border: 1px solid rgb(16, 16, 17);
+  box-shadow: rgba(16, 16, 17, 0.6) 0px 3px 14px 0px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.loginBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: rgba(16, 16, 17, 0.7) 0px 5px 18px 0px;
+}
+
+.loginText {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(240, 242, 246);
+  text-align: center;
+  font-family: var(--font-body);
+  line-height: 1.4;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .nav {
     padding: 0 20px;
   }
 
-  .navLinks {
+  .navCenter {
     display: none;
   }
 }

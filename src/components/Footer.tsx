@@ -7,7 +7,7 @@ import styles from './Footer.module.css';
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className="container">
+      <div className={styles.footerContainer}>
         <div className={styles.grid}>
           <div className={styles.brandCol}>
             <Link href="/" className={styles.logo}>

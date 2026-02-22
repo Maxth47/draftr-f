@@ -39,13 +39,13 @@ export default function Home() {
               <span>Revolutionize your design workflow</span>
             </div>
             <h1 className="h1">Bring ideas to life in just a few clicks.</h1>
-            <p className="body-lg">
+            <p className={styles.heroSubtitle}>
               Design, prototype, and collaborate in real-time - all in one powerful platform. Elevate your <strong>creative process</strong> with <strong>seamless teamwork</strong> and limitless possibilities.
             </p>
-            <Link href="/signup" className={`btn btn-primary btn-lg ${styles.heroBtn}`}>
+            <Link href="/signup" className={styles.heroBtn}>
               Get Started • it&apos;s free
               <span className={styles.heroBtnIcon}>
-                <ArrowRight size={18} />
+                <ArrowRight size={16} />
               </span>
             </Link>
           </div>
@@ -65,22 +65,22 @@ export default function Home() {
       {/* CLIENT LOGOS MARQUEE */}
       <section className={styles.clients}>
         <div className={styles.marqueeWrapper}>
-          <div className={styles.marqueeTrack}>
-            {[...clientLogos, ...clientLogos].map((logo, i) => (
-              <div key={i} className={styles.clientLogo}>
-                <Image src={logo.src} alt={logo.alt} width={120} height={32} />
-              </div>
+          <ul className={styles.marqueeTrack}>
+            {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((logo, i) => (
+              <li key={i} className={styles.clientLogo}>
+                <Image src={logo.src} alt={logo.alt} width={114} height={36} />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       {/* FEATURES SECTION */}
-      <section className={`${styles.features} section`}>
-        <div className="container">
-          <div className="text-center">
+      <section className={styles.features}>
+        <div className={styles.featuresContainer}>
+          <div className={styles.featuresSectionTitle}>
             <h2 className="h2">The ultimate toolkit for designers &amp; teams</h2>
-            <p className="body-lg" style={{ marginTop: '16px', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
+            <p className={styles.heroSubtitle}>
               Everything you need to create, prototype, and collaborate - all in a single, easy-to-use platform.
             </p>
           </div>
@@ -88,55 +88,61 @@ export default function Home() {
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
               <div className={styles.featureImageWrap}>
-                <Image src="/images/feature-image.png" alt="Drag and drop editor" width={500} height={300} />
+                <Image src="/images/feature-image.png" alt="Drag and drop editor" width={500} height={430} />
               </div>
-              <h3 className="h3">Intuitive drag &amp; drop editor</h3>
-              <p className="body-md">Create stunning designs effortlessly with a user-friendly interface.</p>
+              <div className={styles.featureContent}>
+                <h3>Intuitive drag &amp; drop editor</h3>
+                <p>Create stunning designs effortlessly with a user-friendly interface.</p>
+              </div>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureImageWrap}>
-                <Image src="/images/feature-image-3.png" alt="Advanced prototyping" width={500} height={300} />
+                <Image src="/images/feature-image-3.png" alt="Advanced prototyping" width={500} height={430} />
               </div>
-              <h3 className="h3">Advanced prototyping</h3>
-              <p className="body-md">Turn ideas into interactive prototypes without writing a single line of code.</p>
+              <div className={styles.featureContent}>
+                <h3>Advanced prototyping</h3>
+                <p>Turn ideas into interactive prototypes without writing a single line of code.</p>
+              </div>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureImageWrap}>
-                <Image src="/images/feature-image-4.png" alt="Real-time collaboration" width={500} height={300} />
+                <Image src="/images/feature-image-5.png" alt="Real-time collaboration" width={500} height={430} />
               </div>
-              <h3 className="h3">Real-time collaboration</h3>
-              <p className="body-md">Work seamlessly with your team, get instant feedback.</p>
+              <div className={styles.featureContent}>
+                <h3>Real-time collaboration</h3>
+                <p>Work seamlessly with your team, get instant feedback.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* WORKFLOW SECTION */}
-      <section className={`${styles.workflow} section`}>
-        <div className="container">
+      <section className={styles.workflow}>
+        <div className={styles.workflowContainer}>
           <div className={styles.workflowGrid}>
             <div className={styles.workflowLeft}>
               <h2 className="h2">Simplify your workflow</h2>
               <div className={styles.steps}>
                 <div className={styles.step}>
                   <div className={styles.stepNumber}>01</div>
-                  <div>
-                    <h3 className="h3">Start your project</h3>
-                    <p className="body-md">Create a new design or import files with just a click. Set up your workspace effortlessly.</p>
+                  <div className={styles.stepContent}>
+                    <h3>Start your project</h3>
+                    <p>Create a new design or import files with just a click. Set up your workspace effortlessly.</p>
                   </div>
                 </div>
                 <div className={styles.step}>
                   <div className={styles.stepNumber}>02</div>
-                  <div>
-                    <h3 className="h3">Design with ease</h3>
-                    <p className="body-md">Use our intuitive drag-and-drop editor, smart tools stunning designs.</p>
+                  <div className={styles.stepContent}>
+                    <h3>Design with ease</h3>
+                    <p>Use our intuitive drag-and-drop editor, smart tools stunning designs.</p>
                   </div>
                 </div>
                 <div className={styles.step}>
                   <div className={styles.stepNumber}>03</div>
-                  <div>
-                    <h3 className="h3">Export &amp; Share</h3>
-                    <p className="body-md">Easily integrate with your favorite tools to launch your project effortlessly.</p>
+                  <div className={styles.stepContent}>
+                    <h3>Export &amp; Share</h3>
+                    <p>Easily integrate with your favorite tools to launch your project effortlessly.</p>
                   </div>
                 </div>
               </div>
@@ -158,8 +164,8 @@ export default function Home() {
       </section>
 
       {/* INTEGRATIONS SECTION */}
-      <section className={`${styles.integrations} section`}>
-        <div className="container">
+      <section className={styles.integrations}>
+        <div className={styles.integrationsContainer}>
           <div className={styles.integrationsGrid}>
             <div className={styles.integrationsLeft}>
               <div className={styles.integrationsTree}>
@@ -186,16 +192,20 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.integrationsRight}>
-              <h2 className="h2">One platform, unlimited integrations</h2>
-              <Link href="/power-ups" className="btn btn-dark" style={{ marginTop: '24px' }}>
+              <div>
+                <h2 className="h2">One platform, unlimited integrations</h2>
+              </div>
+              <Link href="/power-ups" className={styles.pricingBtnDark} style={{ alignSelf: 'flex-start' }}>
                 View all integrations
               </Link>
-              <blockquote className={styles.ceoQuote}>
-                &ldquo;Our platform empowers teams to collaborate, innovate, and bring ideas to life—seamlessly and effortlessly.&rdquo;
-              </blockquote>
-              <div className={styles.ceoInfo}>
-                <Image src="/images/sofia-delgado.jpg" alt="Daniel Vaughn" width={40} height={40} className={styles.ceoAvatar} />
-                <span>Daniel Vaughn, Founder &amp; CEO</span>
+              <div className={styles.ceoQuoteWrap}>
+                <blockquote className={styles.ceoQuote}>
+                  &ldquo;Our platform empowers teams to collaborate, innovate, and bring ideas to life—seamlessly and effortlessly.&rdquo;
+                </blockquote>
+                <div className={styles.ceoInfo}>
+                  <Image src="/images/sofia-delgado.jpg" alt="Daniel Vaughn" width={40} height={40} className={styles.ceoAvatar} />
+                  <span>Daniel Vaughn, Founder &amp; CEO</span>
+                </div>
               </div>
             </div>
           </div>
@@ -203,8 +213,8 @@ export default function Home() {
       </section>
 
       {/* DARK FEATURES SECTION */}
-      <section className={`${styles.darkFeatures} bg-dark`}>
-        <div className="container">
+      <section className={styles.darkFeaturesWrap}>
+        <div className={styles.darkFeatures}>
           <h2 className="h2 text-center" style={{ color: 'var(--white)' }}>
             Power up your workflow with<br />next-gen features
           </h2>
@@ -253,8 +263,8 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <section className={`${styles.testimonials} section`}>
-        <div className="container">
+      <section className={styles.testimonials}>
+        <div className={styles.testimonialsContainer}>
           <div className={styles.testimonialsGrid}>
             <div className={styles.testimonialsLeft}>
               <h2 className="h2">Loved by designers &amp; teams</h2>
@@ -277,14 +287,13 @@ export default function Home() {
       </section>
 
       {/* PRICING SECTION */}
-      <section className={`${styles.pricing} section`}>
-        <div className="container">
-          <div className="text-center">
+      <section className={styles.pricing}>
+        <div className={styles.pricingContainer}>
+          <div className={styles.pricingSectionTitle}>
             <h2 className="h2">Flexible pricing plans</h2>
-            <p className="body-lg" style={{ marginTop: '16px', maxWidth: '550px', marginLeft: 'auto', marginRight: 'auto' }}>
+            <p className={styles.heroSubtitle}>
               Choose a plan that grows with you. Start for free and upgrade anytime for more features and support
             </p>
-
             <div className={styles.pricingToggle}>
               <span>Monthly</span>
               <div className={styles.toggleSwitch} />
@@ -295,19 +304,18 @@ export default function Home() {
           <div className={styles.pricingGrid}>
             {/* Starter */}
             <div className={styles.pricingCard}>
-              <div className={styles.pricingHeader}>
-                <div>
-                  <h3 className="h3">Starter plan</h3>
-                  <p className="body-md">For individuals &amp; new creators</p>
+              <div className={styles.pricingTop}>
+                <div className={styles.pricingTitleRow}>
+                  <h3>Starter plan</h3>
+                  <p>For individuals &amp; new creators</p>
                 </div>
-                <div className={styles.price}>
+                <div className={styles.priceRow}>
                   <span className={styles.amount}>$19</span>
                   <span className={styles.period}>/month</span>
                 </div>
               </div>
-              <Link href="#" className="btn btn-dark" style={{ width: '100%' }}>Get Started</Link>
-              <div className={styles.pricingBody}>
-                <p className={styles.includedLabel}>Included features:</p>
+              <Link href="#" className={styles.pricingBtnDark}>Get Started</Link>
+              <div className={styles.pricingFeatures}>
                 <ul className={styles.featuresList}>
                   <li>1 active project</li>
                   <li>Basic collaboration tools</li>
@@ -320,20 +328,19 @@ export default function Home() {
             </div>
 
             {/* Pro */}
-            <div className={`${styles.pricingCard} ${styles.featuredCard}`}>
-              <div className={styles.pricingHeader}>
-                <div>
-                  <h3 className="h3">Pro plan</h3>
-                  <p className="body-md">For freelancers &amp; small teams</p>
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingTop}>
+                <div className={styles.pricingTitleRow}>
+                  <h3>Pro plan</h3>
+                  <p>For freelancers &amp; small teams</p>
                 </div>
-                <div className={styles.price}>
+                <div className={styles.priceRow}>
                   <span className={styles.amount}>$49</span>
                   <span className={styles.period}>/month</span>
                 </div>
               </div>
-              <Link href="#" className="btn btn-primary" style={{ width: '100%' }}>Get Started</Link>
-              <div className={styles.pricingBody}>
-                <p className={styles.includedLabel}>Included features:</p>
+              <Link href="#" className={styles.pricingBtnPrimary}>Get Started</Link>
+              <div className={styles.pricingFeatures}>
                 <ul className={styles.featuresList}>
                   <li>Unlimited projects</li>
                   <li>Real-time collaboration</li>
@@ -347,19 +354,18 @@ export default function Home() {
 
             {/* Business */}
             <div className={styles.pricingCard}>
-              <div className={styles.pricingHeader}>
-                <div>
-                  <h3 className="h3">Business plan</h3>
-                  <p className="body-md">For growing teams &amp; agencies</p>
+              <div className={styles.pricingTop}>
+                <div className={styles.pricingTitleRow}>
+                  <h3>Business plan</h3>
+                  <p>For growing teams &amp; agencies</p>
                 </div>
-                <div className={styles.price}>
+                <div className={styles.priceRow}>
                   <span className={styles.amount}>$79</span>
                   <span className={styles.period}>/month</span>
                 </div>
               </div>
-              <Link href="#" className="btn btn-dark" style={{ width: '100%' }}>Get Started</Link>
-              <div className={styles.pricingBody}>
-                <p className={styles.includedLabel}>Included features:</p>
+              <Link href="#" className={styles.pricingBtnDark}>Get Started</Link>
+              <div className={styles.pricingFeatures}>
                 <ul className={styles.featuresList}>
                   <li>Everything in Pro +</li>
                   <li>Team management &amp; permissions</li>
@@ -375,8 +381,8 @@ export default function Home() {
       </section>
 
       {/* CTA SECTION */}
-      <section className={`${styles.ctaSection} section`}>
-        <div className="container">
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaContainer}>
           <div className={styles.ctaGrid}>
             <div className={styles.ctaLeft}>
               <div className={styles.ctaMockup}>
@@ -385,7 +391,7 @@ export default function Home() {
             </div>
             <div className={styles.ctaRight}>
               <h2 className="h2">The perfect design solution for every workflow</h2>
-              <p className="body-lg" style={{ marginTop: '16px' }}>
+              <p className={styles.heroSubtitle} style={{ textAlign: 'left' }}>
                 Discover how our design platform fits your needs, whether you&apos;re a freelancer, startup, or enterprise.
               </p>
               <div className={styles.ctaLinks}>
@@ -403,13 +409,18 @@ export default function Home() {
 
       {/* FINAL CTA */}
       <section className={`${styles.finalCta} bg-lavender`}>
-        <div className="container text-center">
-          <h2 className="h2">Take your creative workflow<br />to the next level</h2>
-          <p className="body-lg" style={{ marginTop: '16px', maxWidth: '550px', marginLeft: 'auto', marginRight: 'auto' }}>
+        <div className={styles.finalCtaContainer}>
+          <h2 className="h2" style={{ textAlign: 'center' }}>Take your creative workflow<br />to the next level</h2>
+          <p className={styles.heroSubtitle}>
             Supercharge your workflow with powerful design tools and effortless collaboration—perfect for freelancers and teams.
           </p>
           <div className={styles.finalCtaActions}>
-            <Link href="/signup" className="btn btn-primary btn-lg">Get Started</Link>
+            <Link href="/signup" className={styles.heroBtn}>
+              Get Started
+              <span className={styles.heroBtnIcon}>
+                <ArrowRight size={16} />
+              </span>
+            </Link>
             <div className={styles.platformLogos}>
               <Image src="/images/icon-2.svg" alt="Windows" width={36} height={36} />
               <Image src="/images/icon-3.svg" alt="Mac" width={36} height={36} />

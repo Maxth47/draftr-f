@@ -589,26 +589,29 @@ export default function Home() {
             {/* Starter */}
             <div className={styles.pricingCard}>
               <div className={styles.pricingTop}>
-                <div className={styles.pricingTitleRow}>
-                  <h3>Starter plan</h3>
-                  <p>For individuals &amp; new creators</p>
+                <div className={styles.pricingPriceRow}>
+                  <div className={styles.pricingTitleRow}>
+                    <h3>Starter plan</h3>
+                    <p>For individuals &amp; new creators</p>
+                  </div>
+                  <div className={styles.priceRow}>
+                    <span className={styles.amount}>$19</span>
+                    <span className={styles.period}>/month</span>
+                  </div>
                 </div>
-                <div className={styles.priceRow}>
-                  <span className={styles.amount}>$19</span>
-                  <span className={styles.period}>/month</span>
-                </div>
+                <Link href="#" className={styles.pricingBtnDark}>
+                  Get Started
+                </Link>
               </div>
-              <Link href="#" className={styles.pricingBtnDark}>
-                Get Started
-              </Link>
               <div className={styles.pricingFeatures}>
+                <p className={styles.includedLabel}>Included features:</p>
                 <ul className={styles.featuresList}>
                   <li>1 active project</li>
                   <li>Basic collaboration tools</li>
                   <li>Limited prototyping options</li>
                   <li>500MB cloud storage</li>
-                  <li>Seamless third-party integrations</li>
-                  <li>Community support</li>
+                  <li className={styles.featureStrikethrough}>Seamless third-party integrations</li>
+                  <li className={styles.featureStrikethrough}>Community support</li>
                 </ul>
               </div>
             </div>
@@ -616,26 +619,29 @@ export default function Home() {
             {/* Pro */}
             <div className={styles.pricingCard}>
               <div className={styles.pricingTop}>
-                <div className={styles.pricingTitleRow}>
-                  <h3>Pro plan</h3>
-                  <p>For freelancers &amp; small teams</p>
+                <div className={styles.pricingPriceRow}>
+                  <div className={styles.pricingTitleRow}>
+                    <h3>Pro plan</h3>
+                    <p>For freelancers &amp; small teams</p>
+                  </div>
+                  <div className={styles.priceRow}>
+                    <span className={styles.amount}>$49</span>
+                    <span className={styles.period}>/month</span>
+                  </div>
                 </div>
-                <div className={styles.priceRow}>
-                  <span className={styles.amount}>$49</span>
-                  <span className={styles.period}>/month</span>
-                </div>
+                <Link href="#" className={styles.pricingBtnPrimary}>
+                  Get Started
+                </Link>
               </div>
-              <Link href="#" className={styles.pricingBtnPrimary}>
-                Get Started
-              </Link>
               <div className={styles.pricingFeatures}>
+                <p className={styles.includedLabel}>Included features:</p>
                 <ul className={styles.featuresList}>
                   <li>Unlimited projects</li>
                   <li>Real-time collaboration</li>
                   <li>Advanced prototyping tools</li>
                   <li>Cloud storage &amp; version history</li>
                   <li>Seamless third-party integrations</li>
-                  <li>Email &amp; chat support</li>
+                  <li className={styles.featureStrikethrough}>Email &amp; chat support</li>
                 </ul>
               </div>
             </div>
@@ -643,19 +649,22 @@ export default function Home() {
             {/* Business */}
             <div className={styles.pricingCard}>
               <div className={styles.pricingTop}>
-                <div className={styles.pricingTitleRow}>
-                  <h3>Business plan</h3>
-                  <p>For growing teams &amp; agencies</p>
+                <div className={styles.pricingPriceRow}>
+                  <div className={styles.pricingTitleRow}>
+                    <h3>Business plan</h3>
+                    <p>For growing teams &amp; agencies</p>
+                  </div>
+                  <div className={styles.priceRow}>
+                    <span className={styles.amount}>$79</span>
+                    <span className={styles.period}>/month</span>
+                  </div>
                 </div>
-                <div className={styles.priceRow}>
-                  <span className={styles.amount}>$79</span>
-                  <span className={styles.period}>/month</span>
-                </div>
+                <Link href="#" className={styles.pricingBtnDark}>
+                  Get Started
+                </Link>
               </div>
-              <Link href="#" className={styles.pricingBtnDark}>
-                Get Started
-              </Link>
               <div className={styles.pricingFeatures}>
+                <p className={styles.includedLabel}>Included features:</p>
                 <ul className={styles.featuresList}>
                   <li>Everything in Pro +</li>
                   <li>Team management &amp; permissions</li>
@@ -682,16 +691,24 @@ export default function Home() {
                   width={500}
                   height={600}
                 />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/element-image-6.png"
+                  alt=""
+                  className={styles.ctaOverlay}
+                />
               </div>
             </div>
             <div className={styles.ctaRight}>
-              <h2 className="h2">
-                The perfect design solution for every workflow
-              </h2>
-              <p className={styles.heroSubtitle} style={{ textAlign: "left" }}>
-                Discover how our design platform fits your needs, whether
-                you&apos;re a freelancer, startup, or enterprise.
-              </p>
+              <div className={styles.ctaTitleWrap}>
+                <h2 className="h2">
+                  The perfect design solution for every workflow
+                </h2>
+                <p className={styles.heroSubtitle} style={{ textAlign: "left" }}>
+                  Discover how our design platform fits your needs, whether
+                  you&apos;re a freelancer, startup, or enterprise.
+                </p>
+              </div>
               <div className={styles.ctaLinks}>
                 <Link href="#">
                   <ArrowRight size={16} /> UI/UX designers
@@ -718,45 +735,57 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section className={`${styles.finalCta} bg-lavender`}>
+      <section className={styles.finalCta}>
         <div className={styles.finalCtaContainer}>
-          <h2 className="h2" style={{ textAlign: "center" }}>
-            Take your creative workflow
-            <br />
-            to the next level
-          </h2>
-          <p className={styles.heroSubtitle}>
-            Supercharge your workflow with powerful design tools and effortless
-            collaboration—perfect for freelancers and teams.
-          </p>
-          <div className={styles.finalCtaActions}>
-            <Link href="/signup" className={styles.heroBtn}>
-              Get Started
-              <span className={styles.heroBtnIcon}>
-                <ArrowRight size={16} />
-              </span>
-            </Link>
-            <div className={styles.platformLogos}>
-              <Image
-                src="/images/icon-2.svg"
-                alt="Windows"
-                width={36}
-                height={36}
-              />
-              <Image
-                src="/images/icon-3.svg"
-                alt="Mac"
-                width={36}
-                height={36}
-              />
+          <div className={styles.finalCtaSectionTitle}>
+            <h2 className="h2" style={{ textAlign: "center" }}>
+              Take your creative workflow to the next level
+            </h2>
+            <p className={styles.heroSubtitle}>
+              Supercharge your workflow with powerful design tools and effortless
+              collaboration—perfect for freelancers and teams.
+            </p>
+            <div className={styles.finalCtaActions}>
+              <Link href="/signup" className={styles.heroBtn}>
+                Get Started
+                <span className={styles.heroBtnIcon}>
+                  <ArrowRight size={16} />
+                </span>
+              </Link>
+              <div className={styles.platformLogos}>
+                <span className={styles.platformBtnLg}>
+                  <Image
+                    src="/images/icon-2.svg"
+                    alt="Windows"
+                    width={20}
+                    height={20}
+                  />
+                </span>
+                <span className={styles.platformBtnLg}>
+                  <Image
+                    src="/images/icon-3.svg"
+                    alt="Mac"
+                    width={20}
+                    height={20}
+                  />
+                </span>
+              </div>
             </div>
           </div>
           <div className={styles.finalCtaImage}>
-            <Image
-              src="/images/dashboard.png"
-              alt="Draftr dashboard"
-              width={1100}
-              height={650}
+            <div className={styles.finalCtaDashboard}>
+              <Image
+                src="/images/dashboard.png"
+                alt="Draftr dashboard"
+                width={1100}
+                height={650}
+              />
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/cursor-mike.svg"
+              alt=""
+              className={styles.finalCtaCursor}
             />
           </div>
         </div>
